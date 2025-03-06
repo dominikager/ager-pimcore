@@ -28,7 +28,7 @@
                         <product-item
                             name="{{ element.getName() }}"
                             name-small="{{ element.getSubName() }}"
-                            available=""
+                            available="{{ element.getAvailable() }}"
                             index="{{ random(50, 9999) }}"
                             :images="[]"
                             image="{{  element.getImage().thumbnail('product').getPath()|default('') }}"

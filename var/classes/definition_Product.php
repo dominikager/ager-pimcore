@@ -10,8 +10,9 @@
  * -- subName [input]
  * -- articles [block]
  * --- sku [input]
- * --- description [textarea]
- * --- descriptionSmall [textarea]
+ * --- description [input]
+ * --- descriptionSmall [input]
+ * --- available [input]
  * --- weight [input]
  * --- package [input]
  * - image [image]
@@ -24,7 +25,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'title' => '',
    'description' => '',
    'creationDate' => NULL,
-   'modificationDate' => 1741250497,
+   'modificationDate' => 1741264067,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -221,7 +222,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'defaultValueGenerator' => '',
                       )),
                       1 => 
-                      \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                      \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'description',
                          'title' => 'Bezeichnung',
                          'tooltip' => '',
@@ -239,14 +240,19 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'blockedVarsForExport' => 
                         array (
                         ),
-                         'maxLength' => NULL,
+                         'defaultValue' => NULL,
+                         'columnLength' => 190,
+                         'regex' => '',
+                         'regexFlags' => 
+                        array (
+                        ),
+                         'unique' => false,
                          'showCharCount' => false,
-                         'excludeFromSearchIndex' => false,
-                         'height' => '',
                          'width' => '',
+                         'defaultValueGenerator' => '',
                       )),
                       2 => 
-                      \Pimcore\Model\DataObject\ClassDefinition\Data\Textarea::__set_state(array(
+                      \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'descriptionSmall',
                          'title' => 'Bezeichnung (klein)',
                          'tooltip' => '',
@@ -264,13 +270,48 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'blockedVarsForExport' => 
                         array (
                         ),
-                         'maxLength' => NULL,
+                         'defaultValue' => NULL,
+                         'columnLength' => 190,
+                         'regex' => '',
+                         'regexFlags' => 
+                        array (
+                        ),
+                         'unique' => false,
                          'showCharCount' => false,
-                         'excludeFromSearchIndex' => false,
-                         'height' => '',
                          'width' => '',
+                         'defaultValueGenerator' => '',
                       )),
                       3 => 
+                      \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
+                         'name' => 'available',
+                         'title' => 'Verfügbarkeit',
+                         'tooltip' => '',
+                         'mandatory' => false,
+                         'noteditable' => false,
+                         'index' => false,
+                         'locked' => false,
+                         'style' => '',
+                         'permissions' => NULL,
+                         'fieldtype' => '',
+                         'relationType' => false,
+                         'invisible' => false,
+                         'visibleGridView' => false,
+                         'visibleSearch' => false,
+                         'blockedVarsForExport' => 
+                        array (
+                        ),
+                         'defaultValue' => NULL,
+                         'columnLength' => 190,
+                         'regex' => '',
+                         'regexFlags' => 
+                        array (
+                        ),
+                         'unique' => false,
+                         'showCharCount' => false,
+                         'width' => '',
+                         'defaultValueGenerator' => '',
+                      )),
+                      4 => 
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'weight',
                          'title' => 'Gewicht',
@@ -300,7 +341,7 @@ return \Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                          'width' => '',
                          'defaultValueGenerator' => '',
                       )),
-                      4 => 
+                      5 => 
                       \Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
                          'name' => 'package',
                          'title' => 'Packung',

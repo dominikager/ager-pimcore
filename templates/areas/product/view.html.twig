@@ -31,7 +31,7 @@
                             available=""
                             index="{{ random(50, 9999) }}"
                             :images="[]"
-                            image="{{  element.getImage().thumbnail('content').getPath()|default('') }}"
+                            image="{{  element.getImage().thumbnail('product').getPath()|default('') }}"
                             :articles="{{ articles|json_encode }}">
                         </product-item>
                     {% endfor %}

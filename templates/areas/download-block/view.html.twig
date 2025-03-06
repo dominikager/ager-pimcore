@@ -1,6 +1,8 @@
 <div id="content-112">
     <div class="container contentblock-spacer" id="Zertifikate">
-        <h2 class="text-headline left-line mb-3" data-aos="fade-up">Zertifikate</h2>
+        <h2 class="text-headline left-line mb-3" data-aos="fade-up">
+            {{ pimcore_input("headline", {"placeholder": "Headline"}) }}
+        </h2>
         <div class="row">
             {% for i in pimcore_block("contentblock").iterator %}
                 <div class="{% if editmode %}col-md-12{% else %}col-md-6{% endif %} mt-1 mt-sm-4">

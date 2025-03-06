@@ -10,7 +10,7 @@
     }) }}
 {% endif %}
 
-    {% set thumbnail = pimcore_image("myImage").getThumbnail("myThumbnail") %}
+    {% set thumbnail = pimcore_image("myImage").getThumbnail("content") %}
 
     {% if thumbnail %}
         <div class="sujet sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}" style="background-image: url('{{ thumbnail }}')">
@@ -31,7 +31,6 @@
                 </video>
             </div>
         {% endif %}
-        {% if pimcore_checkbox("showVideo").isChecked() %}
             <div class="container sujet-content">
                 <div class="sujet-content-inner">
                     <h2 class="sujet-content-name animated fadeIn slow delay-1s">
@@ -41,34 +40,35 @@
                         {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
                     </div>
                 </div>
-                <div class="sujet-cards" >
-                    <div id="sujet-1" class="sujet-card-entry fadeIn slow delay-1s">
-                        <div><span>Wildfleisch</span> <i class="fal fa-angle-right"></i></div>
-                        {{ pimcore_image("wild", {
-                            "width": 300,
-                            "height": 200,
-                            "thumbnail":   "heroCards"
-                        }) }}
+                {% if pimcore_checkbox("showVideo").isChecked() %}
+                    <div class="sujet-cards" >
+                        <div id="sujet-1" class="sujet-card-entry fadeIn slow delay-1s">
+                            <div><span>Wildfleisch</span> <i class="fal fa-angle-right"></i></div>
+                            {{ pimcore_image("wild", {
+                                "width": 300,
+                                "height": 200,
+                                "thumbnail":   "heroCards"
+                            }) }}
+                        </div>
+                        <div id="sujet-2" class="sujet-card-entry fadeIn slow delay-1s">
+                            <div><span>Räucherwaren</span> <i class="fal fa-angle-right"></i></div>
+                            {{ pimcore_image("smoke", {
+                                "width": 300,
+                                "height": 200,
+                                "thumbnail":   "heroCards"
+                            }) }}
+                        </div>
+                        <a href="/convenience-eis" id="sujet-3" class="sujet-card-entry fadeIn slow delay-1s">
+                            <div><span>Eiswürfel</span> <i class="fal fa-angle-right"></i></div>
+                            {{ pimcore_image("ice", {
+                                "width": 300,
+                                "height": 200,
+                                "thumbnail":   "heroCards"
+                            }) }}
+                        </a>
                     </div>
-                    <div id="sujet-2" class="sujet-card-entry fadeIn slow delay-1s">
-                        <div><span>Räucherwaren</span> <i class="fal fa-angle-right"></i></div>
-                        {{ pimcore_image("smoke", {
-                            "width": 300,
-                            "height": 200,
-                            "thumbnail":   "heroCards"
-                        }) }}
-                    </div>
-                    <a href="/convenience-eis" id="sujet-3" class="sujet-card-entry fadeIn slow delay-1s">
-                        <div><span>Eiswürfel</span> <i class="fal fa-angle-right"></i></div>
-                        {{ pimcore_image("ice", {
-                            "width": 300,
-                            "height": 200,
-                            "thumbnail":   "heroCards"
-                        }) }}
-                    </a>
-                </div>
+                {% endif %}
             </div>
-        {% endif %}
         <div class="sujet-icon">
         <span>
             <i class="fal fa-angle-down animated infinite pulse"></i>

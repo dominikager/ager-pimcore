@@ -1,5 +1,4 @@
 {% if editmode %}
-    Video: {{ pimcore_checkbox("show") }}<br/>
     Video: {{ pimcore_checkbox("showVideo") }}<br/>
     Text-Shadow: {{ pimcore_checkbox("textShadow") }}<br/>
 
@@ -14,9 +13,9 @@
     {% set thumbnail = pimcore_image("myImage").getThumbnail("myThumbnail") %}
 
     {% if thumbnail %}
-        <div class="sujet sujet-full{% if pimcore_checkbox("textShadow").isChecked() %}text-shadow{% endif %}" style="background-image: url('{{ thumbnail }}')">
+        <div class="sujet sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}" style="background-image: url('{{ thumbnail }}')">
     {% else %}
-        <div class="sujet page-54 sujet-full{% if pimcore_checkbox("textShadow").isChecked() %}text-shadow{% endif %}">
+        <div class="sujet page-54 sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}">
     {% endif %}
         <div class="sujet-overlay-gradient"></div>
         {% if pimcore_checkbox("showVideo").isChecked() %}

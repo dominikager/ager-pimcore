@@ -24,7 +24,9 @@
 
 <body class="{{ document.getProperty('theme') }} document-{{ document.id }} {{ editmode ? 'editmode' : 'front' }}">
 <div id="app" class="{{ document.getProperty('bodyClass') }}">
-    {% include 'components/navigation.html.twig' %}
+    {% if not editmode %}
+        {% include 'components/navigation.html.twig' %}
+    {% endif %}
 
     {{ block('content') }}
 

@@ -1,0 +1,177 @@
+@import 'variables';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
+
+@import '../../node_modules/leaflet/dist/leaflet.css';
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/aos/src/sass/aos';
+@import '../../node_modules/slick-carousel/slick/slick.scss';
+@import '../../node_modules/lightgallery/src/sass/lightgallery';
+@import url('../../node_modules/animate.css/animate.css');
+@import 'vendor/fontawesome-5-pro/scss/fontawesome';
+@import 'vendor/fontawesome-5-pro/scss/light';
+@import 'vendor/fontawesome-5-pro/scss/solid';
+
+@import 'base/mixins';
+@import 'base/icons';
+@import 'base/base';
+@import 'base/table';
+@import 'base/slick';
+
+@import 'contentblock/call-to-action';
+@import 'contentblock/ready-meal';
+@import 'contentblock/usp';
+@import 'contentblock/sujet';
+@import 'contentblock/history-slider';
+@import 'contentblock/form';
+@import 'contentblock/text';
+@import 'contentblock/history';
+@import 'contentblock/catalog';
+@import 'contentblock/file-download';
+@import 'contentblock/contact-person';
+@import 'contentblock/contact';
+@import 'contentblock/product-item';
+@import 'contentblock/map';
+
+@import 'nav/variables';
+@import 'nav/inpage-nav';
+@import 'nav/nav';
+@import 'nav/toggle';
+@import 'nav/header';
+@import 'nav/brand';
+@import 'nav/first';
+@import 'nav/sub';
+@import 'nav/sub-list';
+
+@import 'layout/footer';
+
+
+
+.page-360 .bg-light {
+  background-color: #2e4153 !important;
+}
+.page-360, .page-360 .product-item-table, .page-360 .product-item, .page-360 .page-content {
+  background-color: #34495d !important;
+  box-shadow: none;
+}
+
+.page-360 .product-item-table-scroll, .page-360 p, .page-360 .text-headline, .page-360 .catalog-name {
+  color: white;
+}
+.page-360 .product-item-name:after, .page-360 .text-headline:after {
+  background: #7fcbd7;
+}
+.page-360 .product-item-name {
+  color: white;
+}
+.page-360 .product-item-table-close, .page-360 .product-item-table-title, .page-360 .product-item-more, .page-360 .catalog-link {
+  color: #7fcbd7;
+}
+.page-360 .row.position-relative {
+  justify-content: center;
+}
+
+.page-360 .btn-outline-dark {
+  color: #7fcbd7;
+  border-color: #7fcbd7;
+}
+
+.page-360 .btn-outline-dark:hover {
+  color: white;
+  background-color: #7fcbd7;
+  border-color: #7fcbd7;
+}
+
+.page-360 .nav-outer:after {
+  background-color: #2e4153;
+ // background-image:url(/assets/build/images/banner.2d766549.eis.png);
+}
+
+
+.page-54 .sujet-content {
+  flex-direction: column;
+}
+.page-54 .sujet-content img {
+  max-width: 100%;
+}
+.page-54 .sujet-cards {
+  display: flex !important;
+  margin-bottom: 60px;
+}
+.page-54 .sujet-card-entry {
+  margin: 10px;
+  background: red;
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: PT Sans Narrow, sans-serif;
+  text-shadow: none;
+  line-height: 0;
+  transition: all 0.2s ease;
+  opacity: 1;
+}
+.page-54 .sujet-card-entry div {
+  padding: 12px 15px;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-54 .sujet-card-entry:hover {
+  color: white;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.page-54 .sujet-overlay-gradient {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 70%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.page-54 .sujet-content-inner {
+  width: 35%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.page-54 .sujet-icon {
+  bottom: -15px;
+}
+.page-54 #sujet-3 {
+  background-color: #34495d;
+}
+@media only screen and (max-width: 1000px) {
+  .page-54 .sujet-card-entry, .page-54 .sujet-cards {
+    width: 100%;
+    font-size: 20px;
+  }
+  .page-54 .sujet-card-entry img {
+    display: none;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .page-54 .sujet-content-inner {
+    width: 100%;
+  }
+  .page-54 .sujet-cards {
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  .page-54 .sujet-card-entry {
+    margin: 6px 0;
+  }
+
+  .nav.active .nav-inner{
+    width:300px
+  }
+}
+
+.page-360  .sujet-full {
+  background-position: left bottom;
+}

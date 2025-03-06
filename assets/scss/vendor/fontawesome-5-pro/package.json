@@ -1,0 +1,15 @@
+{
+  "name": "fontawesome-pro-5",
+  "version": "1.0.0",
+  "description": "## Install ``` bash npm install git+ssh://gogs@git.styleflasher.at:822/styleflasher/fontawesome-5-pro.git --save ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://gogs@git.styleflasher.at:822/styleflasher/fontawesome-5-pro.git"
+  },
+  "author": "Dominik Ager",
+  "license": "ISC"
+}

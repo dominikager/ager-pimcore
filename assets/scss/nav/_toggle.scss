@@ -1,0 +1,52 @@
+.nav-toggle {
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-top: 2.7rem;
+    position: relative;
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+    &-line {
+        margin-bottom: 9px;
+        height: 2px;
+        background-color: $white;
+        width: 40px;
+        transform: rotate(0deg);
+        transition: 0.4s ease-in-out;
+        margin-left: 0;
+
+        &.first {
+            position: absolute;
+            top: 0;
+        }
+
+        &.second {
+            position: absolute;
+            top: 9px;
+        }
+
+        &.third {
+            position: absolute;
+            top: 18px;
+        }
+    }
+
+    &.active {
+        .first {
+            top: 9px;
+            transform: rotate(45deg);
+        }
+
+        .second {
+            width: 0;
+            margin-left: 50%;
+        }
+
+        .third {
+            top: 9px;
+            transform: rotate(-45deg);
+        }
+    }
+}

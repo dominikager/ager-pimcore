@@ -1,0 +1,144 @@
+.nav {
+    justify-content: space-between;
+}
+
+.nav-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media-breakpoint-down(md) {
+        flex-direction: column;
+    }
+}
+
+.nav-item {
+    list-style: none;
+    @include media-breakpoint-up(lg) {
+        &:last-child {
+            .nav-link {
+                padding-right: 0;
+
+                &.open,
+                &.active,
+                &:focus,
+                &:hover {
+                    &:after {
+                        right: 0;
+                    }
+                }
+            }
+        }
+    }
+    @include media-breakpoint-down(md) {
+        width: 300px;
+
+        &:first-child {
+            .nav-link {
+                border-top: 0;
+            }
+        }
+    }
+}
+
+.nav-link {
+    color: $white;
+    height: 6.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 0 1.5rem;
+    position: relative;
+    margin-top: 0.2rem;
+    font-size: 1.8rem;
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    font-family: $font-primary;
+    letter-spacing: 1px;
+    @include media-breakpoint-only(lg) {
+        padding: 0 1rem;
+        font-size: 1.4rem;
+    }
+    @include media-breakpoint-down(md) {
+        margin-top: 0;
+        height: auto;
+        padding: 1.5rem;
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid $gray-300;
+        color: $black;
+
+        &.active {
+            color: $primary;
+        }
+
+        &.has-sub {
+            &:after {
+                content: '\f054';
+                font-family: $font-awesome;
+                font-weight: 300;
+                position: absolute;
+                right: 1.5rem;
+                top: 1.5rem;
+                transform: rotate(0deg);
+                transition: 0.3s ease-in-out;
+            }
+        }
+
+        &.open {
+            &.has-sub {
+                &:after {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        &:after {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            right: 100%;
+            bottom: 2rem;
+            height: 2px;
+            background-color: $white;
+            transition: 0.3s right ease-in;
+            width: 0;
+        }
+
+        &.open,
+        &.active {
+            &:after {
+                right: 1rem;
+                width: auto;
+            }
+
+            @include media-breakpoint-up(md) {
+                color: $white;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xl) {
+        &:after {
+            left: 1.5rem;
+        }
+
+        &.open,
+        &.active,
+        &:focus,
+        &:hover {
+            &:after {
+                right: 1.5rem;
+                width: auto;
+            }
+
+            @include media-breakpoint-up(md) {
+                color: $white;
+            }
+        }
+    }
+}

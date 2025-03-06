@@ -1,0 +1,43 @@
+<div id="content-112">
+    <div class="container contentblock-spacer" id="Zertifikate">
+        <h2 class="text-headline left-line mb-3" data-aos="fade-up">Zertifikate</h2>
+        <div class="row">
+            {% for i in pimcore_block("contentblock").iterator %}
+                <div class="{% if editmode %}col-md-12{% else %}col-md-6{% endif %} mt-1 mt-sm-4">
+                    <div class="row align-items-center d-flex">
+                        <div class="col-md-5 col-3 mt-2 mb-2 mt-sm-0 mb-sm-0" data-aos="fade-up">
+                            {% if not editmode %}
+                                <a target="_blank" href="{{ pimcore_link('link').data.path|default('') }}">
+                            {% endif %}
+                                <div class="catalog-img">
+                                    {{ pimcore_image("image", {
+                                        "width": 209,
+                                        "height": 287,
+                                        "thumbnail": "pdfCover"
+                                    }) }}
+                                </div>
+                            {% if not editmode %}
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-7 col-9" data-aos="fade-up">
+                            <h3 class="catalog-name mb-1 mb-sm-2">{{ pimcore_input("headline", {"placeholder": "File"}) }}</h3>
+                            {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+                            {% if editmode %}
+                                <div>
+                                    {{ pimcore_link('link') }}
+                                </div>
+                            {% endif %}
+                            {% if not editmode %}
+                                <a target="_blank" href="{{ pimcore_link('link').data.path|default('') }}"
+                                   class="catalog-link mt-1 mt-sm-2">
+                                    <i class="fas fa-download"></i> PDF downloaden
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

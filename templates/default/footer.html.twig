@@ -1,0 +1,62 @@
+{% if editmode %}
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+{% endif %}
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="h3 footer-headline">{{ pimcore_input("offersHeadline", {"placeholder": "Headline"}) }}</span>
+                <ul class="footer-links">
+                    {% if editmode %}
+                        {{ pimcore_relations("offers") }}
+                    {% else %}
+                        {% for element in pimcore_relations("companies") %}
+                            <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <span class="h3 footer-headline">{{ pimcore_input("moreLinksHeadline", {"placeholder": "Headline"}) }}</span>
+                <ul class="footer-links">
+                    {% if editmode %}
+                        {{ pimcore_relations("moreLinks") }}
+                    {% else %}
+                        {% for element in pimcore_relations("companies") %}
+                            <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <span class="h3 footer-headline">Genusswelt</span>
+                <div class="footer-text mb-2">
+                    {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+                </div>
+                <a href="http://www.genusswelt.tirol/?utmsource=ager" class="footer-link text-white gtm-footer-genusswelt" target="_blank">Zur Genusswelt <i class="pl-1 fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-quicklinks-wrapper">
+        <div class="container footer-quicklinks">
+            <div>© 2025 by AGER Speck- & Wildspezialitäten</div>
+            <div>
+                <span class="pr-3">Tel: <a href="tel:+435332735950">+43 5332 735 95-0</a></span>
+                <span>Email: <vue-decipher cipher='<n uers="znvygb:vasb@ntre.pp">
+                            vasb@ntre.pp
+                        </n>'></vue-decipher></span>
+            </div>
+        </div>
+    </div>
+</footer>
+<phone-call-to-action></phone-call-to-action>
+
+{% if editmode %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+{% endif %}

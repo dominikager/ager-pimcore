@@ -1,0 +1,30 @@
+.contact {
+    background-color: $primary;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    color: $white;
+
+    &-title {
+        font-size: 3rem;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        font-family: $font-primary;
+        display: flex;
+        align-items: center;
+        letter-spacing: $letter-spacing;
+        margin: 0;
+    }
+
+    &-phone {
+        font-size: 3rem;
+        font-weight: $font-weight-bold;
+        font-family: $font-primary;
+        letter-spacing: $letter-spacing;
+    }
+
+    &-opentime {
+        font-family: $font-secondary;
+        font-weight: $font-weight-normal;
+        font-size: 1.8rem;
+    }
+}

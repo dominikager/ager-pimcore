@@ -1,0 +1,50 @@
+{% if editmode %}
+    Background-Gray: {{ pimcore_checkbox("bgLight") }}<br/>
+{% endif %}
+
+<div class="{% if pimcore_checkbox("bgLight").isChecked() %}bg-light {% endif %}contentblock-extender">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="text-center col-12"><h2 data-aos="fade-up" class="mb-md-4 mb-2 animated-line-center aos-init aos-animate">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2></div>
+
+            {% for i in pimcore_block("contentblock").iterator %}
+                <div {% if editmode %} class="col-md-12" style="width: 800px" {% else %} class="col-md-6" {% endif %}>
+                    <div data-aos="fade-up" class="contact-person aos-init aos-animate">
+                        <div class="row">
+                            <div class="col-4 col-lg-3">
+                                {{ pimcore_image("image", {
+                                    "width": 120,
+                                    "height": 120,
+                                    "thumbnail":  "square"
+                                }) }}
+                            </div>
+                            <div class="col-8 col-lg-4 contact-person-center pl-0">
+                                <div class="contact-person-name">
+                                    <span>
+                                        {{ pimcore_input("firstname", {"placeholder": "firstname"}) }}
+                                    </span>
+                                    <span class="text-uppercase">
+                                        {{ pimcore_input("lastname", {"placeholder": "lastname"}) }}
+                                    </span>
+                                </div>
+                                <div class="contact-person-position">
+                                    {{ pimcore_input("position", {"placeholder": "position"}) }}
+                                </div>
+                            </div>
+                            <div class="col-lg-5 contact-person-center  mt-2 mt-lg-0 pl-lg-0">
+                                {% if editmode %}
+                                    {{ pimcore_input("phone", {"placeholder": "phone"}) }}
+                                    {{ pimcore_input("email", {"placeholder": "email"}) }}
+                                {% else %}
+                                    <span><a class="contact-person-contact" href="mailto:{{ pimcore_input("email", {"placeholder": "email"}) }}"><i class="fas fa-envelope"></i>{{ pimcore_input("email", {"placeholder": "email"}) }}</a></span>
+                                    <a href="tel:+{{ pimcore_input("phone", {"placeholder": "phone"}) }}" class="contact-person-contact gtm-contact-link"><i class="fas fa-phone"></i> {{ pimcore_input("phone", {"placeholder": "phone"}) }}</a>
+                                    <a href="/TODO" class="contact-person-contact gtm-vcard-entry"><i class="fas fa-address-card"></i> V-Card <span class="d-none d-xl-inline">herunterladen</span></a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

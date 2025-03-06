@@ -1,0 +1,14 @@
+.map {
+    position: relative;
+    z-index: 1;
+    height: 450px;
+
+    .leaflet-control-container {
+        display: none;
+    }
+
+    .leaflet-customer-marker {
+        margin-top: -58px;
+        margin-left: -18px;
+    }
+}

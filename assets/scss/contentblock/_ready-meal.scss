@@ -1,0 +1,30 @@
+.ready-meal {
+    @include media-breakpoint-down(lg) {
+        font-size: 1.6rem;
+    }
+
+    img {
+        box-shadow: $base-shadow;
+        @include media-breakpoint-down(sm) {
+            padding: 0 4rem;
+            background: $white;
+        }
+    }
+
+    &-name {
+        @include animated-line-left();
+        margin-bottom: 4.5rem;
+        @include media-breakpoint-down(md) {
+            margin-top: 3rem;
+            font-size: 3rem;
+        }
+    }
+
+    &-label {
+        color: $primary;
+        font-family: $font-primary;
+        font-weight: $font-weight-bold;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+}

@@ -1,0 +1,104 @@
+.text {
+    text-align: center;
+
+    &-label {
+        line-height: 1em;
+        font-weight: $font-weight-bold;
+        font-family: $font-primary;
+        color: $primary;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+    }
+
+    &-headline {
+        margin-top: 0;
+        margin-bottom: 6rem;
+        line-height: 1em;
+        font-weight: $font-weight-bold;
+        font-family: $font-primary;
+        letter-spacing: $letter-spacing;
+        position: relative;
+        @include animated-line-center;
+        @include media-breakpoint-down(lg) {
+            font-size: $h1-font-size-sm;
+            margin-bottom: 5rem;
+        }
+        @include media-breakpoint-down(sm) {
+            font-size: $h1-font-size-sm;
+            margin-bottom: 4rem;
+            word-break: break-word;
+        }
+
+        &.left-line {
+            @include animated-line-left;
+        }
+    }
+
+    &-content {
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 4rem;
+        font-family: $font-secondary;
+        color: $text-color;
+        @include media-breakpoint-down(lg) {
+            margin-bottom: 2rem;
+            font-size: $text-size-sm;
+        }
+
+        &.limited {
+            max-height: 330px;
+            overflow: hidden;
+            transition: 0.4s ease-in-out;
+            @include media-breakpoint-down(md) {
+                max-height: 200px;
+            }
+
+            &.active {
+                max-height: 1000px;
+
+                .text-content-read-more {
+                    opacity: 0;
+                }
+            }
+        }
+
+        &-read-more {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+            padding-top: 100px;
+            text-align: center;
+            opacity: 1;
+            transition: 0.4s ease-in-out;
+            font-family: $font-primary;
+            font-weight: $font-weight-bold;
+            cursor: pointer;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $black;
+        }
+    }
+
+    &-btn {
+        margin-top: 0;
+    }
+
+    &-image {
+        box-shadow: $base-shadow;
+    }
+
+    em {
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0;
+        line-height: 1.5em;
+        text-align: center;
+        @include media-breakpoint-down(sm) {
+            font-size: 1.8rem;
+        }
+    }
+}

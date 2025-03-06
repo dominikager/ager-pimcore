@@ -1,0 +1,181 @@
+.sujet {
+    position: relative;
+    &-full {
+        height: calc(100vh - 73px);
+        background-size: cover;
+        overflow: hidden;
+        background-position: center;
+        @include media-breakpoint-down(lg) {
+            height: calc(100vh - 180px);
+        }
+
+        @include media-breakpoint-up(md) {
+            &.id-149 {
+                height: calc(100vh - 125px);
+            }
+        }
+
+        @include media-breakpoint-down(md) {
+            height: 110vw;
+            background-position: bottom center;
+
+            &.position-1 {
+                background-position: bottom left;
+            }
+
+            &.position-2 {
+                background-position: bottom center;
+            }
+
+            &.position-3 {
+                background-position: bottom right;
+            }
+        }
+    }
+
+    &-video {
+        position: absolute;
+        left: 0;
+        bottom: -2rem;
+        right: 0;
+        z-index: 0;
+        @include media-breakpoint-down(lg) {
+            bottom: 0;
+        }
+        @include media-breakpoint-down(md) {
+            height: 110vw;
+        }
+
+        video {
+            min-width: 100vw;
+            max-width: 150vw;
+            min-height: calc(100vh - 73px);
+            max-height: 120vh;
+            @include media-breakpoint-down(md) {
+                min-height: 110vw;
+                height: 110vw;
+                max-height: 110vw;
+                max-width: 220vw;
+                margin-left: -55vw;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        &-overlay-gradient {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            z-index: 1;
+            background: rgb(2, 0, 36);
+            background: linear-gradient(0deg, rgba(2, 0, 36, 0.5) 0%, rgba(255, 255, 255, 0) 50%);
+        }
+    }
+
+    &-content {
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 2;
+        @include media-breakpoint-down(sm) {
+            align-items: flex-end;
+        }
+
+        &-name {
+            font-size: 5rem;
+            color: $white;
+            font-family: $font-primary;
+            line-height: 1em;
+            margin-bottom: 2rem;
+            animation-delay: 0.5s;
+            letter-spacing: $letter-spacing;
+            @include media-breakpoint-down(lg) {
+                font-size: 3.5rem;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: $h1-font-size-sm;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        &-text {
+            font-size: 1.8rem;
+            color: $white;
+            margin-bottom: 2.5rem;
+            animation-delay: 0.5s;
+
+            @include media-breakpoint-up(md) {
+                &.id-149 {
+                    em {
+                        font-weight: $font-weight-bold;
+                        font-size: 2.2rem;
+                    }
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                font-size: $text-size-sm;
+            }
+        }
+
+        &-btn {
+            color: $white;
+            border-color: $white;
+            transition: 0.3s ease-in-out;
+            animation-delay: 0.5s;
+            @include media-breakpoint-down(sm) {
+                margin-bottom: 3rem;
+                width: 100%;
+            }
+
+            &:hover {
+                color: transparentize($white, 0.3);
+                border-color: transparentize($white, 0.3);
+            }
+        }
+
+        &-inner {
+            width: 35%;
+
+            &.id-149 {
+                @include media-breakpoint-up(md) {
+                    text-align: right;
+                    width: 52%;
+                }
+            }
+
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
+        }
+    }
+
+    &-icon {
+        position: absolute;
+        bottom: 2rem;
+        font-size: 7rem;
+        right: 0;
+        left: 0;
+        text-align: center;
+        z-index: 6;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+    .fal {
+        color: $white;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}

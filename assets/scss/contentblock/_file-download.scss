@@ -1,0 +1,42 @@
+.file-download {
+    background-color: $light;
+    margin-bottom: 1px;
+    font-size: 1.8rem;
+    color: $black;
+    position: relative;
+    display: flex;
+    height: 70px;
+    transition: 0.5s ease-in-out;
+    @include media-breakpoint-down(sm) {
+        font-size: $text-size-sm;
+    }
+
+    &-icon {
+        font-size: 3rem;
+        color: $primary;
+        width: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 1px solid $white;
+        transition: 0.5s ease-in-out;
+        min-width: 70px;
+    }
+
+    &:hover {
+        color: $primary;
+        background-color: $gray-dark;
+
+        .file-download-icon {
+            color: $primary;
+        }
+    }
+
+    &-text {
+        padding: 0 2rem;
+        line-height: 1.2em;
+        height: 70px;
+        display: flex;
+        align-items: center;
+    }
+}

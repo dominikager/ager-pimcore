@@ -1,0 +1,26 @@
+<div class="container contentblock-spacer">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text">
+            {% if editmode %}
+                {{ pimcore_image("image", {
+                    "width": 300,
+                    "height": 200,
+                    "thumbnail":  "content"
+                }) }}
+            {% endif %}
+
+            {% if not editmode %}
+             {% set thumbnail = pimcore_image("image").getThumbnail("content") %}
+            {% endif %}
+
+            <video controls="controls"
+                   poster="{{ thumbnail|default('') }}"
+                   class="text-image">
+                <source
+                    src="https://res.cloudinary.com/ager-gesmbh/video/upload/vc_auto/v1574497246/Homepage_2te_ohne_Stern_ohne_Ton_2_rlgdoq.mp4"
+                    type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</div>

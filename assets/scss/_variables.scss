@@ -1,0 +1,76 @@
+$primary: #dc211c;
+$secondary: #505f64; // EMPTY
+$black: darken(#141e3c, 10);
+
+$gray-light: darken(#f3f3f3, 2);
+$gray-dark: #d9d9d9;
+$gray-darker: #bfbfbf;
+$light: $gray-light;
+$dark: #505f64;
+$warning: #e67e22;
+$text-color: $dark;
+
+$font-weight-normal: 400;
+
+$font-primary: 'PT Sans Narrow', sans-serif;
+$font-secondary: 'Open Sans', sans-serif;
+$font-family-base: $font-secondary;
+$font-size-base: 1.6rem;
+$font-awesome: 'Font Awesome 5 Pro';
+
+$letter-spacing: 2px;
+$letter-spacing-sm: 1px;
+
+$headings-font-family: $font-primary;
+$headings-font-weight: 700;
+
+$h1-font-size: 5rem;
+$h2-font-size: 4rem;
+$h3-font-size: 2.5rem;
+
+$h1-font-size-sm: 3.2rem;
+$h2-font-size-sm: 3rem;
+$h3-font-size-sm: 2.5rem;
+$text-size-sm: 1.6rem;
+
+$base-shadow: 0 0 20px rgba(34, 30, 32, 0.2);
+
+$link-hover-decoration: none;
+
+$btn-padding-y: 1.3rem;
+$btn-padding-x: 4rem;
+$btn-border-radius: 50px;
+$btn-font-weight: 600;
+$btn-border-width: 2px;
+$btn-font-size: 1.4rem;
+$btn-line-height: 1.2em;
+
+$table-cell-padding: 1.5rem;
+$table-accent-bg: $gray-light;
+$table-border-width: 0;
+
+$spacer: 3rem;
+$spacers: ();
+$spacers: map-merge(
+    (
+        0: 0,
+        1: ($spacer * 0.25),
+        2: ($spacer * 0.5),
+        3: $spacer,
+        4: ($spacer * 1.5),
+        5: ($spacer * 3)
+    ),
+    $spacers
+);
+
+$input-btn-padding-y: 1rem;
+$input-btn-padding-x: 1.5rem;
+
+$input-border-radius: 0;
+$input-border-radius-lg: 0;
+
+$card-spacer-x: 1.25rem 0;
+$card-bg: transparent;
+$card-border-width: 0;
+//$card-bg: transparent;
+//$card-spacer-x: 2rem 0;

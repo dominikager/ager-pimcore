@@ -1,0 +1,28 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    heroCards:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 350
+                                    height: 290
+                                    positioning: center
+                                    forceResize: false
+                        medias: {  }
+                        name: heroCards
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1741250807
+                        creationDate: 1741250785
+                        preserveAnimation: false

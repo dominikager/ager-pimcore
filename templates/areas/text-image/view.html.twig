@@ -1,0 +1,44 @@
+{% if editmode %}
+    Image-Square: {{ pimcore_checkbox("imageSquare") }}<br/>
+    Read more Mode: {{ pimcore_checkbox("readMore") }}<br/>
+{% endif %}
+
+<div class="container contentblock-spacer">
+    <div class="row">
+        <div class="col-md-6 order-md-1">
+            <div class="text-image img-fluid">
+                {{ pimcore_image("image", {
+                    "width": 300,
+                    "height": 200,
+                    "thumbnail":  pimcore_checkbox("textShadow").isChecked() ? "square" : "content"
+                }) }}
+            </div>
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-center order-md-0">
+            <h2 class="text-headline left-line mb-xl-4" data-aos="fade-up">
+                {{ pimcore_input("headline", {"placeholder": "Headline"}) }}
+            </h2>
+            {% if pimcore_checkbox("readMore").isChecked()  %}
+                <read-more>
+                    {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+                </read-more>
+            {% else %}
+                <div class="text-content" data-aos="fade-up">
+                    {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+                </div>
+            {% endif %}
+
+            {% if editmode %}
+               <div>
+                   {{ pimcore_link('link') }}
+               </div>
+            {% elseif pimcore_link('link') is not empty %}
+                <div>
+                    <a href="{{ pimcore_link('link').data.path }}" target="{{ pimcore_link('link').data.target }}" data-aos="fade-up" class="text-btn btn btn-outline-dark aos-init aos-animate">
+                        {{ pimcore_link('link').data.text }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

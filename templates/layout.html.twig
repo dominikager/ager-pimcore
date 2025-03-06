@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    <title>{{ document.getTitle() }}</title>
+    <meta name="description" content="{{ document.getDescription() }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+    {% if editmode %}
+    <style>
+        [data-aos^=fade][data-aos^=fade] {
+            opacity: 1 !important;
+            transition-property: opacity, transform;
+        }
+
+        [data-aos=fade-up] {
+            transform: translate3d(0, 0px, 0);
+        }
+    </style>
+    {% endif %}
+</head>
+
+<body class="{{ document.getProperty('theme') }} document-{{ document.id }} {{ editmode ? 'editmode' : 'front' }}">
+<div id="app" class="{{ document.getProperty('bodyClass') }}">
+    {% include 'components/navigation.html.twig' %}
+
+    {{ block('content') }}
+
+    {% if document.getProperty('footerDocument') %}
+        {{ pimcore_inc(document.getProperty('footerDocument'), {
+            pageDocument: document,
+            theme: document.getProperty('theme')
+        }) }}
+    {% endif %}
+</div>
+
+{% if not editmode %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+    <script src="https://www.ager.cc/assets/build/runtime.a96cdb57.js"></script>
+    <script src="https://www.ager.cc/assets/build/js/ager.fd147edc.js"></script>
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
+{% endif %}
+</body>
+</html>

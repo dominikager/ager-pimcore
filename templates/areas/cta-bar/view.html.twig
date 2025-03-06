@@ -1,0 +1,94 @@
+<div class="bg-light">
+    <div class="container contentblock-extender">
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-5 col-10 usp-outer">
+                {% if not editmode %}
+                <a data-aos="fade-up" data-aos-delay="200" href="{{ pimcore_link('link').data.path|default('##') }}"
+                   class="usp">
+                    {% endif %}
+                    <div>
+                        <i class="usp-icon fal fal fa-award"></i>
+                        <h2 class="usp-headline">{{ pimcore_input("award_headline", {"placeholder": "Headline"}) }}</h2>
+                        <div class="usp-text">
+                            {{ pimcore_wysiwyg("award_text", {"placeholder": "Text..."}) }}
+                        </div>
+                    </div>
+                    <span class="usp-btn d-block ">Mehr erfahren</span>
+                    {% if editmode %}
+                        <div>
+                            {{ pimcore_link('award_link') }}
+                        </div>
+                    {% endif %}
+                    {% if not editmode %}
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-lg-3 col-md-5 col-10 usp-outer">
+                {% if not editmode %}
+                <a data-aos="fade-up" data-aos-delay="200" href="{{ pimcore_link('link').data.path|default('##') }}"
+                   class="usp">
+                    {% endif %}
+                    <div>
+                        <i class="usp-icon fal fal fa-user"></i>
+                        <h2 class="usp-headline">{{ pimcore_input("user_headline", {"placeholder": "Headline"}) }}</h2>
+                        <div class="usp-text">
+                            {{ pimcore_wysiwyg("user_text", {"placeholder": "Text..."}) }}
+                        </div>
+                    </div>
+                    <span class="usp-btn d-block ">Mehr erfahren</span>
+                    {% if editmode %}
+                        <div>
+                            {{ pimcore_link('user_link') }}
+                        </div>
+                    {% endif %}
+                    {% if not editmode %}
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-lg-3 col-md-5 col-10 usp-outer">
+                {% if not editmode %}
+                <a data-aos="fade-up" data-aos-delay="200" href="{{ pimcore_link('link').data.path|default('##') }}"
+                   class="usp">
+                    {% endif %}
+                    <div>
+                        <i class="usp-icon fal fal fa-phone"></i>
+                        <h2 class="usp-headline">{{ pimcore_input("phone_headline", {"placeholder": "Headline"}) }}</h2>
+                        <div class="usp-text">
+                            {{ pimcore_wysiwyg("phone_text", {"placeholder": "Text..."}) }}
+                        </div>
+                    </div>
+                    <span class="usp-btn d-block ">Mehr erfahren</span>
+                    {% if editmode %}
+                        <div>
+                            {{ pimcore_link('phone_link') }}
+                        </div>
+                    {% endif %}
+                    {% if not editmode %}
+                </a>
+                {% endif %}
+            </div>
+            <div class="col-lg-3 col-md-5 col-10 usp-outer">
+                {% if not editmode %}
+                <a data-aos="fade-up" data-aos-delay="200" href="{{ pimcore_link('link').data.path|default('##') }}"
+                   class="usp">
+                    {% endif %}
+                    <div>
+                        <i class="usp-icon fal fal fa-download"></i>
+                        <h2 class="usp-headline">{{ pimcore_input("download_headline", {"placeholder": "Headline"}) }}</h2>
+                        <div class="usp-text">
+                            {{ pimcore_wysiwyg("download_text", {"placeholder": "Text..."}) }}
+                        </div>
+                    </div>
+                    <span class="usp-btn d-block ">Mehr erfahren</span>
+                    {% if editmode %}
+                        <div>
+                            {{ pimcore_link('download_link') }}
+                        </div>
+                    {% endif %}
+                    {% if not editmode %}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

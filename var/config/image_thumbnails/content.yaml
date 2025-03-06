@@ -1,0 +1,26 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    content:
+                        items:
+                            -
+                                method: scaleByWidth
+                                arguments:
+                                    width: 600
+                                    forceResize: false
+                        medias: {  }
+                        name: content
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1741246110
+                        creationDate: 1741246103
+                        preserveAnimation: false

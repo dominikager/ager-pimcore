@@ -1,0 +1,21 @@
+<div class="container contentblock-spacer" id="content-intro">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2 text">
+            <h2 class="h2 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>
+            <div class="text-content" data-aos="fade-up">
+                {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+            </div>
+            {% if editmode %}
+                <div>
+                    {{ pimcore_link('link') }}
+                </div>
+            {% elseif pimcore_link('link') is not empty %}
+                <div>
+                    <a href="{{ pimcore_link('link').data.path }}" target="{{ pimcore_link('link').data.target }}" data-aos="fade-up" class="text-btn btn btn-outline-dark">
+                        {{ pimcore_link('link').data.text }}
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

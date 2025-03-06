@@ -1,0 +1,33 @@
+.slick-slider {
+	//box-shadow: $base-shadow;
+	line-height: 0;
+
+	.slick-arrow {
+		color: $white;
+		font-size: 4rem;
+		font-weight: $font-weight-bold;
+		position: absolute;
+		top: calc(50% - 1.5rem);
+		background-color: transparent;
+		border: none;
+		z-index: 5;
+		transition: 0.2s ease-in-out;
+
+		&:hover {
+			color: $dark;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&.prev {
+			left: 1rem;
+		}
+
+		&.next {
+			right: 1rem;
+		}
+	}
+
+}

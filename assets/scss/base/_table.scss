@@ -1,0 +1,19 @@
+.table {
+    font-size: 2rem;
+
+    thead {
+        font-family: $font-primary;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+
+        th {
+            border-top: 0;
+        }
+    }
+
+    td {
+        &:first-child {
+            color: $primary;
+        }
+    }
+}

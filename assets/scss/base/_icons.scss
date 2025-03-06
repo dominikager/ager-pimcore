@@ -1,0 +1,86 @@
+/* stylelint-disable */
+
+@font-face {
+    font-family: agericons;
+    src: url('../../fonts/agericons.eot');
+    src: url('../../fonts/agericons.eot#iefix') format('embedded-opentype'),
+        url('../../fonts/agericons.ttf') format('truetype'),
+        url('../../fonts/agericons.woff') format('woff'),
+        url('../../fonts/agericons.svg#agericons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    font-family: agericons;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &-sm {
+        @include media-breakpoint-up(lg) {
+            font-size: 4rem;
+        }
+        font-size: 2rem;
+    }
+}
+
+.icon-history:before {
+    content: '\e901';
+}
+
+.icon-quality:before {
+    content: '\e90d';
+}
+
+.icon-ager:before {
+    content: '\e900';
+}
+
+.icon-team:before {
+    content: '\e902';
+}
+
+.icon-wildschwein-Kopie:before {
+    content: '\e903';
+}
+
+.icon-wuerste:before {
+    content: '\e904';
+}
+
+.icon-gams:before {
+    content: '\e905';
+}
+
+.icon-gastrosortiment:before {
+    content: '\e906';
+}
+
+.icon-schinken:before {
+    content: '\e907';
+}
+
+.icon-speck:before {
+    content: '\e908';
+}
+
+.icon-wildschwein:before {
+    content: '\e909';
+}
+
+.icon-hase:before {
+    content: '\e90a';
+}
+
+.icon-hirsch:before {
+    content: '\e90b';
+}
+
+.icon-reh:before {
+    content: '\e90c';
+}

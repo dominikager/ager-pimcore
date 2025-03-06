@@ -1,0 +1,43 @@
+@mixin animated-line-center($height: 0.5rem, $bottom: -2rem, $width: 5rem) {
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: $bottom;
+        height: $height;
+        width: 0;
+        left: 50%;
+        background: $primary;
+        transition: 0.3s;
+    }
+
+    &.aos-animate {
+        &:after {
+            width: $width;
+            left: calc(50% - 2.5rem);
+            transition: 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        }
+    }
+}
+
+@mixin animated-line-left($height: 0.5rem, $bottom: -2rem, $width: 5rem) {
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: $bottom;
+        height: $height;
+        width: 0;
+        left: 0;
+        background: $primary;
+        transition: 0.3s;
+    }
+
+    &.aos-animate {
+        &:after {
+            width: $width;
+            left: 0;
+            transition: 0.8s ease-in-out;
+            transition-delay: 0.5s;
+        }
+    }
+}

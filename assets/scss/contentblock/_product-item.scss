@@ -1,0 +1,241 @@
+.product-item {
+    background-color: $white;
+    box-shadow: 0 0 20px rgba(34, 30, 32, 0.06);
+    cursor: pointer;
+    margin-bottom: 0;
+    padding: 0 1.5rem;
+    min-height: 358px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @include media-breakpoint-down(lg) {
+        min-height: 310px;
+    }
+    @include media-breakpoint-down(md) {
+        min-height: 220px;
+    }
+    @include media-breakpoint-down(sm) {
+        min-height: auto;
+
+        &-img-wrapper {
+            padding-bottom: 30px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        &-img-wrapper {
+            max-height: 260px;
+        }
+    }
+
+    &-anchor {
+        position: absolute;
+        top: 8rem;
+    }
+
+    &-name {
+        font-size: 2.7rem;
+        text-align: center;
+        margin-bottom: 2.5rem;
+        line-height: 1.1em;
+        height: 64px;
+        display: flex;
+        margin-top: -2rem;
+        padding: 0 1rem;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        @include animated-line-center(0.4rem, -1.2rem);
+        @include media-breakpoint-down(lg) {
+            font-size: 2.4rem;
+        }
+        @include media-breakpoint-down(md) {
+            font-size: 2.2rem;
+            height: 50px;
+        }
+        @include media-breakpoint-down(sm) {
+            @include animated-line-center(0.3rem, -1.2rem);
+        }
+
+        &-sub {
+            font-size: 1.7rem;
+            line-height: 1.2em;
+            padding-top: 2px;
+            height: 2.2rem;
+        }
+    }
+
+    &-more {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        color: $primary;
+        font-weight: $font-weight-bold;
+        padding-bottom: 2.3rem;
+        text-align: center;
+        display: block;
+        line-height: 1em;
+        letter-spacing: 1px;
+        @include media-breakpoint-down(md) {
+            font-size: 1.4rem;
+            padding-bottom: 1.5rem;
+        }
+        @include media-breakpoint-down(sm) {
+            padding-bottom: 2rem;
+        }
+    }
+
+    &-col {
+        width: 100%;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+        margin-bottom: 3rem;
+        transition: 0.2s ease-in-out;
+        transition-delay: 0.2s;
+        @include media-breakpoint-down(md) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+        @include media-breakpoint-down(sm) {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+
+        @include media-breakpoint-up(sm) {
+            $table-height: 240px !default;
+            @for $i from 0 through 15 {
+                &-height-#{$i} {
+                    margin-bottom: $table-height;
+                    $table-height: $table-height + 60px;
+                    transition-delay: 0s;
+                }
+            }
+        }
+
+        .slick-arrow {
+            position: absolute;
+            top: 1rem;
+            font-size: 0;
+            padding: 1rem;
+            height: 5rem;
+        }
+
+        .slick-next {
+            right: 1.5rem;
+
+            &:after {
+                font-family: $font-awesome;
+                font-weight: 300;
+                content: '\f054';
+                font-size: 2.3rem;
+                color: $gray-600;
+            }
+        }
+
+        .slick-prev {
+            right: 4.5rem;
+
+            &:after {
+                font-family: $font-awesome;
+                font-weight: 300;
+                content: '\f053';
+                font-size: 2.3rem;
+                color: $gray-600;
+            }
+        }
+    }
+
+    &-table {
+        background-color: $white;
+        box-shadow: 0 0 20px rgba(34, 30, 32, 0.06);
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+        @include media-breakpoint-up(sm) {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: 3rem;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+            padding: 3rem;
+        }
+
+        @include media-breakpoint-down(sm) {
+            &-scroll {
+                overflow-y: scroll;
+            }
+        }
+
+        &-close {
+            font-size: 3rem;
+            padding-bottom: 2rem;
+            color: $primary;
+            cursor: pointer;
+            margin-top: -1rem;
+            @include media-breakpoint-down(sm) {
+                padding-bottom: 0;
+                margin-top: -0.7rem;
+            }
+        }
+
+        &-title {
+            color: $primary;
+            display: block;
+            line-height: 1em;
+            margin-top: 0.5rem;
+            margin-bottom: 2.5rem;
+            @include media-breakpoint-down(sm) {
+                margin-top: 1.5rem;
+                margin-bottom: 1.5rem;
+                font-size: 2rem;
+            }
+        }
+
+        &-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.6;
+            line-height: 1.6em;
+        }
+
+        &-row {
+            display: flex;
+            border-bottom: 1px solid $light;
+            white-space: nowrap;
+            line-height: 1.1em;
+            min-height: 60px;
+            height: 60px;
+            padding: 0;
+            @include media-breakpoint-down(sm) {
+                width: 700px;
+                font-size: 1.5rem;
+            }
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        &-col {
+            flex-wrap: wrap;
+            display: flex;
+            line-height: 1.2em;
+            white-space: pre-wrap;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+
+            div {
+                min-width: 100%;
+            }
+
+            &.highlighted {
+                font-weight: $font-weight-bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    pdfCover:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 209
+                                    height: 287
+                                    positioning: center
+                                    forceResize: false
+                        medias: {  }
+                        name: pdfCover
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1741251534
+                        creationDate: 1741251515
+                        preserveAnimation: false

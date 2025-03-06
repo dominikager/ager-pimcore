@@ -1,0 +1,41 @@
+<div class="bg-light">
+    <div class="container contentblock-extender">
+        <div class="row position-relative">
+            <div class="col-12 text-center">
+                <h2 data-aos="fade-up" class="h1 animation-line-center text-headline aos-init aos-animate">
+                    {{ pimcore_input("headline", {"placeholder": "Headline"}) }}
+                </h2>
+            </div>
+
+            {% if editmode %}
+                {{ pimcore_relations("products") }}
+            {% else %}
+                    {% for element in pimcore_relations("products") %}
+                        {% set articles = [] %}
+
+                        {% for article in element.getArticles() %}
+                            {% set articles = articles|merge(
+                                {(loop.index0) : {
+                                    "number": article['sku'].getData(),
+                                    "desc": article['description'].getData(),
+                                    "desc_small": article['descriptionSmall'].getData(),
+                                    "weight": article['weight'].getData(),
+                                    "weight_package": article['package'].getData(),
+                                }})
+                            %}
+                        {% endfor %}
+
+                        <product-item
+                            name="{{ element.getName() }}"
+                            name-small="{{ element.getSubName() }}"
+                            available=""
+                            index="{{ random(50, 9999) }}"
+                            :images="[]"
+                            image="{{  element.getImage().thumbnail('content').getPath()|default('') }}"
+                            :articles="{{ articles|json_encode }}">
+                        </product-item>
+                    {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>

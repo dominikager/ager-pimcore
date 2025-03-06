@@ -1,0 +1,113 @@
+.history {
+    @include media-breakpoint-up(sm) {
+        &-outer {
+            margin-bottom: -10rem;
+
+            &.last {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &-entry {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        @include media-breakpoint-up(sm) {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            width: 40%;
+            margin-right: 60%;
+        }
+
+        @include media-breakpoint-up(sm) {
+            &.second-history {
+                width: 40%;
+                margin-left: 60%;
+                margin-right: 0;
+            }
+        }
+
+        &-text {
+            font-size: 1.6rem;
+            font-family: $font-secondary;
+            color: $text-color;
+            margin-top: 3rem;
+            margin-left: 1rem;
+            @include media-breakpoint-up(xl) {
+                padding-right: 6rem;
+            }
+            @include media-breakpoint-down(md) {
+                font-size: 1.4rem;
+            }
+            @include media-breakpoint-down(sm) {
+                padding-right: 1rem;
+            }
+        }
+
+        &-year {
+            position: absolute;
+            font-size: 6rem;
+            color: $primary;
+            font-weight: $font-weight-bold;
+            font-family: $font-primary;
+            margin-top: -4.5rem;
+            padding-left: 0;
+            margin-left: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        .slick-arrow {
+            top: 11rem;
+            @include media-breakpoint-down(lg) {
+                top: 10rem;
+            }
+
+            &.next {
+                right: 9rem;
+                @include media-breakpoint-down(lg) {
+                    right: 4rem;
+                }
+            }
+
+            &.prev {
+                left: 2rem;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            &-line {
+                position: absolute;
+                width: 2px;
+                background-color: lighten($primary, 20);
+                left: calc(50% - 1px);
+                top: 0;
+                bottom: 0;
+
+                &-point {
+                    position: absolute;
+                    right: -1rem;
+                    width: 2rem;
+                    height: 2rem;
+                    border-radius: 100%;
+                    background-color: $primary;
+                    top: calc(50% - 10.5rem);
+                    left: calc(50% - 1rem);
+                    z-index: 2;
+                    transition: 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .history-indicator {
+        position: fixed;
+        bottom: 0;
+        left: calc(50% - 1px);
+        width: 2px;
+        height: 50vh;
+        background: $gray-dark;
+        z-index: 1;
+    }
+}

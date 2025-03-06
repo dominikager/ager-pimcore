@@ -1,0 +1,35 @@
+{# get root node if there is no document defined (for pages which are routed directly through static route) #}
+{% if not document is defined or not document %}
+    {% set document = pimcore_document(1) %}
+{% endif %}
+
+{# get the document which should be used to start in navigation | default home #}
+{% set navStartNode = document.getProperty('navigationRoot') %}
+{% if not navStartNode is instanceof('\\Pimcore\\Model\\Document\\Page') %}
+    {% set navStartNode = pimcore_document(1) %}
+{% endif %}
+
+{% set mainNavigation = pimcore_build_nav({
+    active: document,
+    root: navStartNode
+}) %}
+
+
+{% set navItems = [] %}
+
+
+{% for page in mainNavigation %}
+    {% set navItems = navItems|merge(
+        {(loop.index0) : {
+            'name': page.getTitle(),
+            'url':  page.getUri(),
+            'active': page.getId() == document.getId(),
+            'submenu': [],
+            'megaMenu': [],
+        }})
+    %}
+{% endfor %}
+
+<div class="nav-outer">
+    <vue-nav :items="{{ navItems|json_encode }}"></vue-nav>
+</div>

@@ -1,0 +1,52 @@
+.contact-person {
+    background: $gray-dark;
+    padding: 1.5rem;
+    transition: 0.5s ease-in-out;
+    margin-top: 3rem;
+
+    &-center {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &-name {
+        font-size: 2rem;
+        color: $black;
+        font-family: $font-primary;
+        font-weight: $font-weight-bold;
+        padding-bottom: 0.5rem;
+        letter-spacing: 1px;
+        line-height: 1.2em;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.7rem;
+        }
+    }
+
+    &-position {
+        font-size: 1.6rem;
+        color: $text-color;
+        font-family: $font-primary;
+        font-weight: $font-weight-bold;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        letter-spacing: 1px;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.4rem;
+        }
+    }
+
+    .fas {
+        color: $primary;
+        width: 25px;
+    }
+
+    &-contact {
+        padding-bottom: 2px;
+        color: $black;
+        display: block;
+        @include media-breakpoint-down(lg) {
+            font-size: 1.4rem;
+        }
+    }
+}

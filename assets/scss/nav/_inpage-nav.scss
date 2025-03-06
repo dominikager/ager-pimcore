@@ -1,0 +1,45 @@
+.inpage-nav {
+    position: fixed;
+    top: 7.3rem;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    z-index: 9;
+    box-shadow: $nav-shadow;
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+
+    &-inner {
+        display: flex;
+        justify-content: flex-end;
+
+        nav {
+            width: 100%;
+        }
+    }
+
+    a {
+        text-transform: uppercase;
+        color: $black;
+        font-family: $font-primary;
+        font-weight: $font-weight-bold;
+        font-size: 1.4rem;
+        position: relative;
+        padding: 1.5rem 1rem;
+        display: inline-flex;
+        letter-spacing: $letter-spacing;
+
+        &:hover {
+            color: $primary;
+        }
+
+        &.active {
+            color: $primary;
+        }
+
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+}

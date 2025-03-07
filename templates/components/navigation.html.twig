@@ -24,11 +24,11 @@
     {% for subItem in page.getPages() %}
         {% set subItems = subItems|merge(
             {(loop.index0) : {
-                'name': page.getTitle(),
-                'url':  page.getUri(),
-                'active': page.getId() == document.getId(),
-                'icon': page.document.getProperty('navigationIcon'),
-                'text': page.document.getProperty('navigationText'),
+                'name': subItem.getTitle(),
+                'url':  subItem.getUri(),
+                'active': subItem.getId() == document.getId(),
+                'icon': subItem.document.getProperty('navigationIcon'),
+                'text': subItem.document.getProperty('navigationText'),
             }})
         %}
     {% endfor %}

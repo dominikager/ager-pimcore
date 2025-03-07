@@ -10,7 +10,7 @@
     }) }}
 {% endif %}
 
-    {% set thumbnail = pimcore_image("image").getThumbnail("content") %}
+    {% set thumbnail = pimcore_image("image").getThumbnail("hero") %}
 
     {% if thumbnail %}
         <div class="sujet sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}" style="background-image: url('{{ thumbnail }}')">

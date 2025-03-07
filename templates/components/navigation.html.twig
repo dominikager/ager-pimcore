@@ -19,13 +19,27 @@
 
 
 {% for page in mainNavigation %}
+    {% set subItems = [] %}
+
+    {% for subItem in page.getPages() %}
+        {% set subItems = subItems|merge(
+            {(loop.index0) : {
+                'name': page.getTitle(),
+                'url':  page.getUri(),
+                'active': page.getId() == document.getId(),
+                'icon': page.document.getProperty('navigationIcon'),
+                'text': page.document.getProperty('navigationText'),
+            }})
+        %}
+    {% endfor %}
+
     {% set navItems = navItems|merge(
         {(loop.index0) : {
             'name': page.getTitle(),
             'url':  page.getUri(),
             'active': page.getId() == document.getId(),
-            'submenu': [],
-            'megaMenu': [],
+            'submenu': subItems,
+            'megaMenu': true,
         }})
     %}
 {% endfor %}

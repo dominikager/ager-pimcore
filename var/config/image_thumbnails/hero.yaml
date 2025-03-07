@@ -1,0 +1,26 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    hero:
+                        items:
+                            -
+                                method: scaleByWidth
+                                arguments:
+                                    width: 2000
+                                    forceResize: false
+                        medias: {  }
+                        name: hero
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1741341498
+                        creationDate: 1741341481
+                        preserveAnimation: false

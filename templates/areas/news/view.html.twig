@@ -1,0 +1,55 @@
+<div class="container contentblock-spacer">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="text-image img-fluid">
+                {{ pimcore_image("image", {
+                    "width": 300,
+                    "height": 200,
+                    "thumbnail":  "content"
+                }) }}
+            </div>
+        </div>
+        <div class="col-md-6 mt-3 mt-md-0 d-flex flex-column justify-content-center">
+            <h2 class="text-headline left-line mb-xl-4" data-aos="fade-up">
+                {{ pimcore_input("headline", {"placeholder": "Headline"}) }}
+            </h2>
+
+            <div class="text-content" data-aos="fade-up">
+                {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+            </div>
+            {% if editmode %}
+                {{ pimcore_wysiwyg("textDetail", {"placeholder": "Text für mehr Information..."}) }}
+
+            {% endif %}
+            <div>
+                <button data-aos="fade-up" type="button" data-toggle="modal" data-target=".ager-modal-334"
+                        class="text-btn btn btn-outline-dark aos-init aos-animate">Mehr erfahren
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% if not editmode %}
+    <div tabindex="-1" role="dialog" aria-hidden="true" class="modal fade ager-modal-334">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h5>
+                </div>
+                {{ pimcore_image("image", {
+                    "width": 300,
+                    "height": 200,
+                    "thumbnail":  "content"
+                }) }}
+                <div class="modal-body p-3">
+                    {{ pimcore_wysiwyg("textDetail", {"placeholder": "Text..."}) }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-secondary">Schließen</button>
+            </div>
+        </div>
+    </div>
+{% endif %}

@@ -8,7 +8,9 @@
             </div>
 
             {% if editmode %}
-                {{ pimcore_relations("products") }}
+                <div style="width: 1000px;">
+                    {{ pimcore_relations("products") }}
+                </div>
             {% else %}
                     {% for element in pimcore_relations("products") %}
                         {% set articles = [] %}

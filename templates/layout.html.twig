@@ -44,7 +44,9 @@
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
-
+    <script src="https://www.ager.cc/assets/build/runtime.a96cdb57.js"></script>
+    <script src="https://www.ager.cc/assets/build/js/ager.fd147edc.js"></script>
+    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     <script>
         document.getElementById("sujet-1").onclick = function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
@@ -98,9 +100,6 @@
             }
         });
     </script>
-    <script src="https://www.ager.cc/assets/build/runtime.a96cdb57.js"></script>
-    <script src="https://www.ager.cc/assets/build/js/ager.fd147edc.js"></script>
-    <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
 {% endif %}
 </body>
 </html>

@@ -15,19 +15,21 @@
 {% for i in pimcore_block("contentblock").iterator %}
     <div class="container position-relative history-outer{% if pimcore_block("contentblock").getCount() == loop.index  %} last{% endif %}">
         <div class="history-entry {% if loop.index % 2 == 0 %} second-history{% endif %}">
-            <div data-aos="fade-up history-slider">
-                <slick :options="slickOptions" :fade="true">
-                    <div class="history-slider-entry">
-                        <div class="history-slider-entry-image">
-                            {{ pimcore_image("image", {
-                                "width": 120,
-                                "height": 120,
-                                "thumbnail":  "content"
-                            }) }}
+            {% if editmode or  pimcore_image("image").getData().id %}
+                <div data-aos="fade-up history-slider">
+                    <slick :options="slickOptions" :fade="true">
+                        <div class="history-slider-entry">
+                            <div class="history-slider-entry-image">
+                                {{ pimcore_image("image", {
+                                    "width": 120,
+                                    "height": 120,
+                                    "thumbnail":  "content"
+                                }) }}
+                            </div>
                         </div>
-                    </div>
-                </slick>
-            </div>
+                    </slick>
+                </div>
+            {% endif %}
             <div class="history-entry-year" data-aos="fade-up" data-aos-delay="500">
                 {{ pimcore_input("year", {"placeholder": "Year"}) }}
             </div>

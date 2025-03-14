@@ -96,6 +96,21 @@
                 navLink[0].classList.remove("open");
             }
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Define the class that should disable the link
+            const disabledClass = "product-item";
+
+            document.querySelectorAll("a").forEach(anchor => {
+                anchor.addEventListener("click", function (event) {
+                    // Check if the anchor has the specified class
+                    if (anchor.classList.contains(disabledClass)) {
+                        event.preventDefault(); // Prevent default link behavior
+                        console.log("Link disabled for this element.");
+                    }
+                });
+            });
+        });
     </script>
 {% endif %}
 </body>

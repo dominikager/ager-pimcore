@@ -1,7 +1,24 @@
 <div class="container contentblock-spacer" id="content-intro">
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text">
-            <h2 class="h2 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>
+            {% if editmode %}
+                {{ pimcore_select("headlinetype", {
+                    "store": [
+                        ["h1", "h1"],
+                        ["h2", "h2"],
+                    ],
+                    "defaultValue" : "h2"
+                }) }}
+            {% endif %}
+
+            {% if not editmode and pimcore_select("headlinetype").getData() === 'h2' %}
+                <h2 class="h2 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>
+            {% endif%}
+
+            {% if not editmode and pimcore_select("headlinetype").getData() === 'h1' %}
+                <h1 class="h1 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h1>
+            {% endif%}
+
             <div class="text-content" data-aos="fade-up">
                 {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
             </div>

@@ -14,13 +14,13 @@ pimcore:
                         name: product
                         description: ''
                         group: ''
-                        format: JPEG
+                        format: SOURCE
                         quality: 85
                         highResolution: null
                         preserveColor: false
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1741343830
+                        modificationDate: 1741960861
                         creationDate: 1741264005
                         preserveAnimation: false

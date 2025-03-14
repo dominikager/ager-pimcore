@@ -13,7 +13,7 @@
 <div class="history-indicator"></div>
 
 {% for i in pimcore_block("contentblock").iterator %}
-    <div class="container position-relative history-outer">
+    <div class="container position-relative history-outer{% if pimcore_block("contentblock").getCount() == loop.index  %} last{% endif %}">
         <div class="history-entry {% if loop.index % 2 == 0 %} second-history{% endif %}">
             <div data-aos="fade-up history-slider">
                 <slick :options="slickOptions" :fade="true">

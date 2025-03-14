@@ -47,8 +47,8 @@
     <script src="/js/runtime.a96cdb57.js"></script>
     <script src="/js/ager.fd147edc.js"></script>
     <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
-    <script>
-        document.getElementById("sujet-1").onclick = function() {
+    <script type="text/javascript">
+        document.getElementById("sujet-1").addEventListener("click", function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
             navToggle[0].classList.add("active");
 
@@ -63,7 +63,7 @@
             navLink[1].classList.remove("open");
         };
 
-        document.getElementById("sujet-2").onclick = function() {
+        document.getElementById("sujet-2").addEventListener("click", function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
             navToggle[0].classList.add("active");
 

@@ -98,16 +98,18 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            const disabledClass = "product-item";
+            setTimeout(() => {
+                const disabledClass = "product-item";
 
-            document.querySelectorAll("a").forEach(anchor => {
-                anchor.addEventListener("click", function (event) {
-                    if (anchor.classList.contains(disabledClass)) {
-                        event.preventDefault(); // Prevent default link behavior
-                        console.log("Link disabled for this element.");
-                    }
+                document.querySelectorAll("a").forEach(anchor => {
+                    anchor.addEventListener("click", function (event) {
+                        if (anchor.classList.contains(disabledClass)) {
+                            event.preventDefault(); // Prevent default link behavior
+                            console.log("Link disabled for this element.");
+                        }
+                    });
                 });
-            });
+            }, 1500);
         });
     </script>
 {% endif %}

@@ -22,12 +22,13 @@
 
             <div class="text-content" data-aos="fade-up">
                 {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
+
+                {% if pimcore_checkbox("articleList").isChecked() %}
+                    <button class="btn btn-outline-dark mt-3" v-scroll-to="'#download'" data-aos="fade-up"><i class="fas fa-download"></i> Artikellisten</button>
+                {% endif %}
+
             </div>
-
-            {% if pimcore_checkbox("articleList").isChecked() %}
-                <button class="btn btn-outline-dark mt-3" v-scroll-to="'#download'" data-aos="fade-up"><i class="fas fa-download"></i> Artikellisten</button>
-            {% endif %}
-
+            
             {% if editmode %}
                 <div>
                     {{ pimcore_link('link') }}

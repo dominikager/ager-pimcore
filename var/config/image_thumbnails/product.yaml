@@ -9,7 +9,7 @@ pimcore:
                                 method: scaleByWidth
                                 arguments:
                                     width: 500
-                                    forceResize: false
+                                    forceResize: true
                         medias: {  }
                         name: product
                         description: ''
@@ -17,10 +17,10 @@ pimcore:
                         format: PNG
                         quality: 85
                         highResolution: null
-                        preserveColor: false
-                        preserveMetaData: false
+                        preserveColor: true
+                        preserveMetaData: true
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1741961012
+                        modificationDate: 1741971351
                         creationDate: 1741264005
                         preserveAnimation: false

@@ -1,0 +1,28 @@
+pimcore:
+    assets:
+        image:
+            thumbnails:
+                definitions:
+                    team:
+                        items:
+                            -
+                                method: cover
+                                arguments:
+                                    width: 250
+                                    height: 250
+                                    positioning: center
+                                    forceResize: true
+                        medias: {  }
+                        name: team
+                        description: ''
+                        group: ''
+                        format: SOURCE
+                        quality: 85
+                        highResolution: null
+                        preserveColor: false
+                        preserveMetaData: false
+                        rasterizeSVG: false
+                        downloadable: false
+                        modificationDate: 1741978860
+                        creationDate: 1741978844
+                        preserveAnimation: false

@@ -45,6 +45,59 @@
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
 
+    <script>
+        document.getElementById("sujet-1").onclick = function() {
+            var navToggle = document.getElementsByClassName('nav-toggle');
+            navToggle[0].classList.add("active");
+            var nav = document.getElementsByClassName('nav');
+            nav[0].classList.add("active");
+            var navList = document.getElementsByClassName('nav-list');
+            navList[0].classList.add("open");
+            var navSub = document.getElementsByClassName('nav-sub-outer');
+            navSub[0].classList.add("open");
+            navSub[1].classList.remove("open");
+
+            var navLink = document.getElementsByClassName('nav-link');
+            navLink[0].classList.add("open");
+            navLink[1].classList.remove("open");
+        };
+
+        document.getElementById("sujet-2").onclick = function() {
+            var navToggle = document.getElementsByClassName('nav-toggle');
+            navToggle[0].classList.add("active");
+            var nav = document.getElementsByClassName('nav');
+            nav[0].classList.add("active");
+            var navList = document.getElementsByClassName('nav-list');
+            navList[0].classList.add("open");
+
+            var navSub = document.getElementsByClassName('nav-sub-outer');
+            navSub[1].classList.add("open");
+            navSub[0].classList.remove("open");
+
+            var navLink = document.getElementsByClassName('nav-link');
+            navLink[1].classList.add("open");
+            navLink[0].classList.remove("open");
+        };
+
+        window.addEventListener('click', function (evt) {
+            if(evt.target.matches('.nav')) {
+                var navToggle = document.getElementsByClassName('nav-toggle');
+                navToggle[0].classList.remove("active");
+                var nav = document.getElementsByClassName('nav');
+                nav[0].classList.remove("active");
+                var navList = document.getElementsByClassName('nav-list');
+                navList[0].classList.remove("open");
+
+                var navSub = document.getElementsByClassName('nav-sub-outer');
+                navSub[1].classList.remove("open");
+                navSub[0].classList.remove("open");
+
+                var navLink = document.getElementsByClassName('nav-link');
+                navLink[1].classList.remove("open");
+                navLink[0].classList.remove("open");
+            }
+        });
+    </script>
     <script src="https://www.ager.cc/assets/build/runtime.a96cdb57.js"></script>
     <script src="https://www.ager.cc/assets/build/js/ager.fd147edc.js"></script>
     <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>

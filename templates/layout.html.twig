@@ -61,7 +61,7 @@
             var navLink = document.getElementsByClassName('nav-link');
             navLink[0].classList.add("open");
             navLink[1].classList.remove("open");
-        };
+        });
 
         document.getElementById("sujet-2").addEventListener("click", function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
@@ -77,7 +77,7 @@
             var navLink = document.getElementsByClassName('nav-link');
             navLink[1].classList.add("open");
             navLink[0].classList.remove("open");
-        };
+        });
 
         window.addEventListener('click', function (evt) {
             if(evt.target.matches('.nav')) {

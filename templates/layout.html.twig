@@ -51,8 +51,7 @@
         document.getElementById("sujet-1").onclick = function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
             navToggle[0].classList.add("active");
-            var nav = document.getElementsByClassName('nav');
-            nav[0].classList.add("active");
+
             var navList = document.getElementsByClassName('nav-list');
             navList[0].classList.add("open");
             var navSub = document.getElementsByClassName('nav-sub-outer');
@@ -67,8 +66,7 @@
         document.getElementById("sujet-2").onclick = function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
             navToggle[0].classList.add("active");
-            var nav = document.getElementsByClassName('nav');
-            nav[0].classList.add("active");
+
             var navList = document.getElementsByClassName('nav-list');
             navList[0].classList.add("open");
 
@@ -85,8 +83,7 @@
             if(evt.target.matches('.nav')) {
                 var navToggle = document.getElementsByClassName('nav-toggle');
                 navToggle[0].classList.remove("active");
-                var nav = document.getElementsByClassName('nav');
-                nav[0].classList.remove("active");
+
                 var navList = document.getElementsByClassName('nav-list');
                 navList[0].classList.remove("open");
 

@@ -101,4 +101,12 @@
             font-size: 1.8rem;
         }
     }
+
+    p {
+        em {
+            font-size: 1.3rem !important;
+            font-weight: normal !important;
+            line-height: 1em !important;
+        }
+    }
 }

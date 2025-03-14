@@ -11,11 +11,11 @@
                 }) }}
             {% endif %}
 
-            {% if not editmode and pimcore_select("headlinetype").getData() === 'h2' %}
+            {% if not editmode and pimcore_select("headlinetype").getData() == 'h2' %}
                 <h2 class="h2 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>
             {% endif%}
 
-            {% if not editmode and pimcore_select("headlinetype").getData() === 'h1' %}
+            {% if not editmode and pimcore_select("headlinetype").getData() == 'h1' %}
                 <h1 class="h1 text-headline" data-aos="fade-up">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h1>
             {% endif%}
 

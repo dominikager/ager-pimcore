@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-lg-8 offset-lg-2 text">
             {% if editmode %}
+                Scrolle zur Artikelliste: {{ pimcore_checkbox("articleList") }}<br/>
                 {{ pimcore_select("headlinetype", {
                     "store": [
                         ["h1", "h1"],
@@ -22,7 +23,11 @@
             <div class="text-content" data-aos="fade-up">
                 {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
             </div>
-            <button class="btn btn-outline-dark mt-3" v-scroll-to="'#download'" data-aos="fade-up"><i class="fas fa-download"></i> Artikellisten</button>
+
+            {% if pimcore_checkbox("articleList").isChecked() %}
+                <button class="btn btn-outline-dark mt-3" v-scroll-to="'#download'" data-aos="fade-up"><i class="fas fa-download"></i> Artikellisten</button>
+            {% endif %}
+
             {% if editmode %}
                 <div>
                     {{ pimcore_link('link') }}

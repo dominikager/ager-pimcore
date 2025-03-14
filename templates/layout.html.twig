@@ -48,6 +48,19 @@
     <script src="/js/ager.fd147edc.js"></script>
     <script src="https://website-widgets.pages.dev/dist/sienna.min.js" defer></script>
     <script type="text/javascript">
+        setTimeout(() => {
+            const disabledClass = "product-item";
+
+            document.querySelectorAll("a").forEach(anchor => {
+                anchor.addEventListener("click", function (event) {
+                    if (anchor.classList.contains(disabledClass)) {
+                        event.preventDefault(); // Prevent default link behavior
+                        console.log("Link disabled for this element.");
+                    }
+                });
+            });
+        }, 1500);
+
         document.getElementById("sujet-1").addEventListener("click", function() {
             var navToggle = document.getElementsByClassName('nav-toggle');
             navToggle[0].classList.add("active");
@@ -96,19 +109,6 @@
                 navLink[0].classList.remove("open");
             }
         });
-
-            setTimeout(() => {
-                const disabledClass = "product-item";
-
-                document.querySelectorAll("a").forEach(anchor => {
-                    anchor.addEventListener("click", function (event) {
-                        if (anchor.classList.contains(disabledClass)) {
-                            event.preventDefault(); // Prevent default link behavior
-                            console.log("Link disabled for this element.");
-                        }
-                    });
-                });
-            }, 1500);
     </script>
 {% endif %}
 </body>

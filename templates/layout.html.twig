@@ -28,7 +28,9 @@
         {% include 'components/navigation.html.twig' %}
     {% endif %}
 
-    {{ block('content') }}
+    <div class="page-content">
+        {{ block('content') }}
+    </div>
 
     {% if document.getProperty('footerDocument') %}
         {{ pimcore_inc(document.getProperty('footerDocument'), {

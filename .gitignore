@@ -30,6 +30,7 @@
 /var/config/reports.php
 
 
+/public/build/
 /public/var/
 /public/sitemap*.xml
 

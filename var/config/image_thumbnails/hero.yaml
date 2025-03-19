@@ -6,12 +6,14 @@ pimcore:
                     hero:
                         items:
                             -
-                                method: scaleByWidth
+                                method: cover
                                 arguments:
-                                    width: 2000
+                                    width: 1980
+                                    height: 1080
+                                    positioning: center
                                     forceResize: false
                         medias: {  }
-                        name: hero
+                        name: square
                         description: ''
                         group: ''
                         format: SOURCE
@@ -21,6 +23,6 @@ pimcore:
                         preserveMetaData: false
                         rasterizeSVG: false
                         downloadable: false
-                        modificationDate: 1741341498
-                        creationDate: 1741341481
+                        modificationDate: 1741244860
+                        creationDate: 1741244851
                         preserveAnimation: false

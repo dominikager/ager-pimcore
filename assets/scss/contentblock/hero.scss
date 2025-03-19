@@ -4,7 +4,7 @@
     justify-content: center;
 
     &-image {
-        width: calc(100% - 800px);
+        width: calc(100% - 30vw);
         font-size: 0;
 
         video {
@@ -13,7 +13,7 @@
     }
 
     &-content {
-        max-width: 800px;
+        max-width: 30vw;
         width: 100%;
         background-color: $light;
         padding: 60px;

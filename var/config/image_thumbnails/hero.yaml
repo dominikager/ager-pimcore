@@ -11,7 +11,7 @@ pimcore:
                                     width: 1980
                                     height: 1080
                                     positioning: center
-                                    forceResize: false
+                                    forceResize: true
                         medias: {  }
                         name: square
                         description: ''

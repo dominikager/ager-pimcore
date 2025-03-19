@@ -8,70 +8,23 @@
         "width": 200,
         "height": 200,
     }) }}
+
+
 {% endif %}
 
-    {% set thumbnail = pimcore_image("image").getThumbnail("hero") %}
 
-    {% if thumbnail %}
-        <div class="sujet sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}" style="background-image: url('{{ thumbnail }}')">
-    {% else %}
-        <div class="sujet page-54 sujet-full{% if pimcore_checkbox("textShadow").isChecked() %} text-shadow{% endif %}">
-    {% endif %}
-        <div class="sujet-overlay-gradient"></div>
-        {% if pimcore_checkbox("showVideo").isChecked() %}
-            <div class="sujet-video">
-                <video
-                    poster="https://www.ager.cc/var/site/storage/images/_aliases/sujet_full/8/7/2/0/278-12-ger-DE/video.png"
-                    preload="none" autoplay="autoplay" playsinline="" loop="loop" muted="muted"
-                    data-id="768b35db-8343-4799-9e2a-966f11799624">
-                    <source
-                        src="https://res.cloudinary.com/ager-gesmbh/video/upload/ac_none,c_scale,w_1600/v1574534294/hero_ager_color_jmgtul.mp4">
-                    <source
-                        src="https://res.cloudinary.com/ager-gesmbh/video/upload/ac_none,c_scale,w_1600/v1574534294/hero_ager_color_jmgtul.webm">
-                </video>
-            </div>
-        {% endif %}
-            <div class="container sujet-content">
-                <div class="sujet-content-inner">
-                    <h2 class="sujet-content-name animated fadeIn slow delay-1s">
-                        {{ pimcore_input("headline", {"placeholder": "Headline"}) }}
-                    </h2>
-                    <div class="sujet-content-text animated fadeIn slow delay-1s">
-                        {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
-                    </div>
-                </div>
-                {% if pimcore_checkbox("showVideo").isChecked() %}
-                    <div class="sujet-cards" >
-                        <div id="sujet-1" class="sujet-card-entry fadeIn slow delay-1s">
-                            <div><span>Wildfleisch</span> <i class="fal fa-angle-right"></i></div>
-                            {{ pimcore_image("wild", {
-                                "width": 300,
-                                "height": 200,
-                                "thumbnail":   "heroCards"
-                            }) }}
-                        </div>
-                        <div id="sujet-2" class="sujet-card-entry fadeIn slow delay-1s">
-                            <div><span>Räucherwaren</span> <i class="fal fa-angle-right"></i></div>
-                            {{ pimcore_image("smoke", {
-                                "width": 300,
-                                "height": 200,
-                                "thumbnail":   "heroCards"
-                            }) }}
-                        </div>
-                        <a href="/convenience-eis" id="sujet-3" class="sujet-card-entry fadeIn slow delay-1s">
-                            <div><span>Eiswürfel</span> <i class="fal fa-angle-right"></i></div>
-                            {{ pimcore_image("ice", {
-                                "width": 300,
-                                "height": 200,
-                                "thumbnail":   "heroCards"
-                            }) }}
-                        </a>
-                    </div>
-                {% endif %}
-            </div>
-        <div class="sujet-icon">
-        <span>
-            <i class="fal fa-angle-down animated infinite pulse"></i>
-        </span>
+<div class="hero">
+    <div class="hero-image">
+        {{ pimcore_image("image", {
+            "width": 300,
+            "height": 200,
+            "thumbnail":  "hero"
+        }) }}
+    </div>
+    <div class="hero-content">
+        <h2 class="text-headline left-line mb-xl-4 aos-init aos-animate">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>
+        <div class="text-content">
+            {{ pimcore_wysiwyg("text", {"placeholder": "Text..."}) }}
         </div>
     </div>
+</div>

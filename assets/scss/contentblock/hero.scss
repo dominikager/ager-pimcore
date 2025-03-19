@@ -1,0 +1,20 @@
+.hero {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    &-image {
+        width: calc(100% - 800px);
+    }
+
+    &-content {
+        max-width: 800px;
+        width: 100%;
+        background-color: $light;
+        padding: 60px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

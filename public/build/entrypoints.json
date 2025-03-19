@@ -6,7 +6,7 @@
         "/build/app.js"
       ],
       "css": [
-        "/build/vendors-node_modules_animate_css_animate_css-node_modules_leaflet_dist_leaflet_css.css",
+        "/build/vendors-node_modules_leaflet_dist_leaflet_css.css",
         "/build/app.css"
       ]
     }

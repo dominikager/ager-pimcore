@@ -14,7 +14,9 @@
                         {{ pimcore_relations("offers") }}
                     {% else %}
                         {% for element in pimcore_relations("offers") %}
-                            <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                            <li>
+                                <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                            </li>
                         {% endfor %}
                     {% endif %}
                 </ul>
@@ -26,7 +28,9 @@
                         {{ pimcore_relations("moreLinks") }}
                     {% else %}
                         {% for element in pimcore_relations("moreLinks") %}
-                            <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                            <li>
+                                <a href="{{ element.getFullPath() }}">{{ element.getProperty('navigation_name') }}</a>
+                            </li>
                         {% endfor %}
                     {% endif %}
                 </ul>

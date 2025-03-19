@@ -37,7 +37,7 @@
         {(loop.index0) : {
             'name': page.getTitle(),
             'url':  page.getUri(),
-            'active': page.getId() == document.getId(),
+            'active': page.getId() == document.getId() or page.getId() == document.getParent().getId()|default(0),
             'submenu': subItems,
             'megaMenu': true,
         }})

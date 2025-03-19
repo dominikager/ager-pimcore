@@ -12,7 +12,7 @@
   },
   "prefer-stable": true,
   "require": {
-    "pimcore/pimcore": "*",
+    "pimcore/pimcore": "^11.1",
     "pimcore/platform-version": "^2024.4",    
     "pimcore/admin-ui-classic-bundle": "*",
     "pimcore/quill-bundle": "*",

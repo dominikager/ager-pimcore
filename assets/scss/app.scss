@@ -196,3 +196,10 @@ img {
     white-space: nowrap;
     border-width: 0;
 }
+
+body {
+    [data-aos^=fade][data-aos^=fade] {
+        opacity: 1;
+        transition-property: opacity, transform;
+    }
+}

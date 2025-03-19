@@ -5,6 +5,11 @@
 
     &-image {
         width: calc(100% - 800px);
+        font-size: 0;
+
+        video {
+            width: 100%;
+        }
     }
 
     &-content {

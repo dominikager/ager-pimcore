@@ -1,25 +1,28 @@
 {% if editmode %}
     Video: {{ pimcore_checkbox("showVideo") }}<br/>
-    Text-Shadow: {{ pimcore_checkbox("textShadow") }}<br/>
-
-    Image:
-
-    {{ pimcore_image("image", {
-        "width": 200,
-        "height": 200,
-    }) }}
-
-
 {% endif %}
-
 
 <div class="hero">
     <div class="hero-image">
-        {{ pimcore_image("image", {
-            "width": 300,
-            "height": 200,
-            "thumbnail":  "hero"
-        }) }}
+        {% if pimcore_checkbox("showVideo").isChecked() %}
+            <div >
+                <video
+                    poster="https://www.ager.cc/var/site/storage/images/_aliases/sujet_full/8/7/2/0/278-12-ger-DE/video.png"
+                    preload="none" autoplay="autoplay" playsinline="" loop="loop" muted="muted"
+                    data-id="768b35db-8343-4799-9e2a-966f11799624">
+                    <source
+                        src="https://res.cloudinary.com/ager-gesmbh/video/upload/ac_none,c_scale,w_1600/v1574534294/hero_ager_color_jmgtul.mp4">
+                    <source
+                        src="https://res.cloudinary.com/ager-gesmbh/video/upload/ac_none,c_scale,w_1600/v1574534294/hero_ager_color_jmgtul.webm">
+                </video>
+            </div>
+        {% else %}
+            {{ pimcore_image("image", {
+                "width": 300,
+                "height": 200,
+                "thumbnail":  "hero"
+            }) }}
+        {% endif %}
     </div>
     <div class="hero-content">
         <h2 class="h1 text-headline left-line mb-xl-4 aos-init aos-animate">{{ pimcore_input("headline", {"placeholder": "Headline"}) }}</h2>

@@ -28,7 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 },
 /******/ __webpack_require__ => { // webpackRuntimeModules
 /******/ var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-/******/ __webpack_require__.O(0, ["vendors-node_modules_leaflet_dist_leaflet_css"], () => (__webpack_exec__("./assets/js/app.js")));
+/******/ __webpack_require__.O(0, ["vendors-node_modules_animate_css_animate_css-node_modules_leaflet_dist_leaflet_css"], () => (__webpack_exec__("./assets/js/app.js")));
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);

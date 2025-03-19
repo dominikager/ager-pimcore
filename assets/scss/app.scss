@@ -8,7 +8,7 @@
 @import '../../node_modules/aos/src/sass/aos';
 @import '../../node_modules/slick-carousel/slick/slick.scss';
 @import '../../node_modules/lightgallery/src/sass/lightgallery';
-//@import url('../../node_modules/animate.css/animate.css');
+@import url('../../node_modules/animate.css/animate.css');
 @import 'vendor/fontawesome-5-pro/scss/fontawesome';
 @import 'vendor/fontawesome-5-pro/scss/light';
 @import 'vendor/fontawesome-5-pro/scss/solid';
@@ -196,11 +196,4 @@ img {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
-}
-
-body {
-    [data-aos^=fade][data-aos^=fade] {
-        opacity: 1;
-        transition-property: opacity, transform;
-    }
 }

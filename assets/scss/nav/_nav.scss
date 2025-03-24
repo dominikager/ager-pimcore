@@ -22,7 +22,7 @@
         background-repeat: no-repeat;
         background-position: left center;
         @include media-breakpoint-down(sm) {
-            background-position: -45px center;
+            background-color: $primary;
         }
     }
 
